@@ -28,7 +28,8 @@
         <el-row :gutter="20">
           <el-col :span="6" v-for="item in topNewsList" :key="item._id">
             <el-card>
-              <div class="image" :style="{ backgroundImage: `url(${item.cover})` }"></div>
+                <div class="image" 
+                :style="{ backgroundImage: `url(http://localhost:3001${item.cover})` }"></div>
               <template #header>{{ item.title }}</template>
             </el-card>
           </el-col>
@@ -51,16 +52,7 @@
     return newsList.value.filter(item => item.title.includes(searchText.value))
   })
   
-  const topNewsList = computed(() => {
-    const newlist = newsList.value.slice(0, 4).map(item => {
-      const cover = item.cover
-        ? (item.cover.startsWith('http') ? item.cover : `http://localhost:3001${item.cover}`)
-        : 'https://via.placeholder.com/150'; // 默认图片
-      console.log('item.cover:', item.cover, 'processed cover:', cover);
-      return { ...item, cover };
-    });
-    return newlist;
-  })
+  const topNewsList = computed(() => newsList.value.slice(0, 4))
   
   onMounted(async () => {
     const res = await axios.get('/webapi/news/list')
