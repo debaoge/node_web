@@ -117,9 +117,9 @@ const tabList = [{ label: "最新动态", name: 1 }, { label: "典型案例", na
 const tabNews = computed(() => {
   return _.groupBy(newsList.value, item => item.category)
 })
-
+const router = useRouter()
 const handleChangePage = (id)=> {
-  console.log('------------', id);
+  router.push(`/news/${id}`)
   
 }
 
