@@ -25,7 +25,8 @@ const route = useRoute()
 const router = useRouter()
 
 const handleClick = () => {
-    window.location = "http://localhost:8081"
+    const port = process.env.VUE_APP_API_PORT || 8080; // 默认端口号为 8080
+    window.location = `http://localhost:${port}`;
 }
 
 

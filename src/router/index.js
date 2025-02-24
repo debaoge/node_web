@@ -1,5 +1,7 @@
 import Home from '@/views/Home.vue'
 import News from '@/views/News.vue'
+import NewsDetail from '@/views/NewsDetail.vue'
+
 import Product from '@/views/Product.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import NProgress from 'nprogress'
@@ -15,6 +17,11 @@ const routes = [
     path:'/news',
     name: 'news',
     component: News
+  },
+  {
+    path:'/news/:id',
+    name: 'newsdetail',
+    component: NewsDetail
   },
   {
     path:'/product',
