@@ -10,7 +10,7 @@
                             <span>{{ item.describe }}</span><br>
                             <span>{{ item.content }}</span><br>
                             <div>更多信息，请访问
-                                <br> http:alijiujiu:8080
+                                <br> http:debaoge:8080
                             </div>
                         </div>
                     </el-card>

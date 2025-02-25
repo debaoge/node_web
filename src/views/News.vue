@@ -120,7 +120,6 @@ const tabNews = computed(() => {
 const router = useRouter()
 const handleChangePage = (id)=> {
   router.push(`/news/${id}`)
-  
 }
 
 </script>
